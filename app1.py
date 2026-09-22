@@ -27,10 +27,12 @@ class UserInput(BaseModel):
     oldpeak: Annotated[float, Field(..., alias="Oldpeak", description="ST depression measured in depression")]
     st_slope: Annotated[str, Field(..., alias="ST_Slope", description="Slope of peak exercise ST segment [Up, Flat, Down]")]
 
+#human readable 
 @app.get('/')
 def home():
     return {'message':'Heart Disease Prediction API'}
 
+#to check if api is live and working properly (for Kubernetes and AWS Cloud services)
 @app.get('/health')
 def health_check():
     return {
