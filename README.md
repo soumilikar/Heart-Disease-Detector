@@ -1,19 +1,28 @@
-# Heart Disease Prediction
+# Heart Disease Prediction + Heart Health Assistant (AI Chatbot)
 
 A machine learning web application that predicts the possibility of heart disease based on patient health parameters.
 
 The project uses a Random Forest Classifier for prediction, FastAPI as the backend API, and Streamlit for the frontend interface.
 
+After running the risk prediction, users can open a multimodal chatbot powered by Google's Gemini API.
+
+
 ---
 
 ## Features
 
+### For predictor:
 * Heart disease prediction using a Random Forest model
 * Interactive Streamlit user interface
 * FastAPI backend for handling predictions
 * Dropdown fields for categorical variables
 * Input validation for numerical values
 * Simple and user-friendly prediction results
+
+### For AI chatbot: 
+* Answer general heart-health questions
+* Read uploaded prescriptions or medical reports (images/PDF) and summarize them
+* Accept text, file, and voice input, with optional spoken replies
 
 ## Tech Stack
 
@@ -25,22 +34,22 @@ The project uses a Random Forest Classifier for prediction, FastAPI as the backe
 * **Pydantic**
 * **Uvicorn**
 * **Pickle**
-
+* **Gemini-API**
 ---
 
 ## Project Structure
 
-```text
-Heart-Disease-Prediction/
-│
-├── app1.py                 # FastAPI backend
-├── streamlit_app.py        # Streamlit frontend
-├── model.pkl               # Trained Random Forest model
-├── RandomForest.ipynb      # Model training notebook
-├── requirements.txt        # Project dependencies
-└── README.md               # Project documentation
 ```
-
+├── app1.py              # main app: input form + risk prediction
+├── frontend.py          # UI components
+├── pages/
+│   └── chatbot.py       # Gemini-powered chatbot page
+├── model.pkl            # trained ML model
+├── heart.csv            # dataset
+├── requirements.txt
+└── .streamlit/
+    └── secrets.toml     # API key (not committed)
+```
 ---
 
 ## Input Parameters
@@ -135,6 +144,16 @@ http://localhost:8501
 
 ### 3. FastAPI Documentation
 <img width="1552" height="870" alt="image" src="https://github.com/user-attachments/assets/6d62a889-c29a-4f3e-acc7-a5840499ec02" />
+
+
+### 4. Chatbot UI
+
+Asking it a text question:
+<img width="1863" height="928" alt="Screenshot 2026-10-14 031616" src="https://github.com/user-attachments/assets/0a01ef39-0265-4502-adc7-b82779a94d24" />
+
+Uploading a prescription to get insights:
+
+<img width="1411" height="773" alt="Screenshot 2026-10-14 032129" src="https://github.com/user-attachments/assets/4727aad8-3e3f-4e28-b246-94cc8fe750bb" />
 
 
 ## How to Run
