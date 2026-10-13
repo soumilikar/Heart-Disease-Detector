@@ -163,7 +163,7 @@ uvicorn app1:app --reload
 Open another terminal and run:
 
 ```bash
-streamlit run streamlit_app.py
+streamlit run frontend.py
 ```
 
 ### 5. Use the Application

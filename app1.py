@@ -65,3 +65,4 @@ def predict_heart_disease(data: UserInput):
         "prediction": prediction,
         "status": "Heart Disease" if prediction == 1 else "Normal"
     }
+

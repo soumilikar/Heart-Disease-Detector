@@ -10,6 +10,9 @@ st.set_page_config(
 st.title("Heart Disease Prediction")
 st.write("Enter the patient's details below to predict the possibility of heart disease.")
 
+if st.button("💬 Open chatbot", type="primary", use_container_width=True):
+    st.switch_page("pages/chatbot.py")
+
 st.divider()
 
 
